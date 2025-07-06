@@ -15,8 +15,16 @@ class ProdutosController extends Controller
         $this->produto = $produto;
     }
     public function index(Request $request){
-        $findProduto = Produto::all();
+
+        $pesquisar = $request->pesquisar;
+        $findProduto = $this->produto->getPrudutosPesquisarIndex(search:$pesquisar ?? '');
         
         return  view('pages.produtos.paginacao' , compact('findProduto'));
+    }
+    public function delete(Request $request){
+        $id= $request->id;
+        $buscaRegistro= Produto::find($id);
+        $buscaRegistro->delete();
+       return response()->json(['success'=>true]);
     }
 }
