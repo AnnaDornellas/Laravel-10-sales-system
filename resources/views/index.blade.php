@@ -10,16 +10,16 @@
     <title>Gestão</title>
 
     @yield('styles')
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
-       
-    <link rel="apple-touch-icon" href="{{asset('icones/apple-touch-icon.png')}}" sizes="180x180">
-    <link rel="icon" href="{{asset('icones/favicon-32x32.png')}}" sizes="32x32" type="image/png">
-    <link rel="icon" href="{{asset('icones/favicon-16x16.png')}}" sizes="16x16" type="image/png">
-    <link rel="manifest" href="{{asset('icones/manifest.json')}}">
-    <link rel="mask-icon" href="{{asset('icones/safari-pinned-tab.svg')}}" color="#712cf9">
-    <link rel="icon" href="{{asset('icones/favicon.ico')}}">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="{{ asset('icones/apple-touch-icon.png') }}" sizes="180x180">
+    <link rel="icon" href="{{ asset('icones/favicon-32x32.png') }}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ asset('icones/favicon-16x16.png') }}" sizes="16x16" type="image/png">
+    <link rel="manifest" href="{{ asset('icones/manifest.json') }}">
+    <link rel="mask-icon" href="{{ asset('icones/safari-pinned-tab.svg') }}" color="#712cf9">
+    <link rel="icon" href="{{ asset('icones/favicon.ico') }}">
     <meta name="theme-color" content="#712cf9">
-    <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -104,8 +104,8 @@
     </style>
 </head>
 
-<body> 
-   
+<body>
+
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> <a
             class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Gestão de Produtos</a>
         <ul class="navbar-nav flex-row d-md-none">
@@ -121,12 +121,12 @@
                     </svg> </button> </li>
         </ul>
         <div id="navbarSearch" class="navbar-search w-100 collapse"> <input
-                class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search"
-                aria-label="Search"> </div>
+                class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+        </div>
     </header>
     <div class="container-fluid">
         <div class="row">
-           @include('components.navegacao')
+            @include('components.navegacao')
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 @yield('content')
                 <!-- <div
@@ -136,17 +136,23 @@
                 </div>  -->
 
 
-                
+
             </main>
         </div>
     </div>
-       @yield('scripts')
-    <script src="/js/bootstrap.blunde.min"
-        class="astro-vvvwv3sm"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
-        class="astro-vvvwv3sm"></script>
+    @yield('scripts')
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="/js/bootstrap.blunde.min" class="astro-vvvwv3sm"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" class="astro-vvvwv3sm"></script>
     <script src="/js/dashboard.js" class="astro-vvvwv3sm"></script>
     <script src="/js/color-modes.js"></script>
+
+    {{-- BlocUI loading --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+
+     <script src="/js/projeto.js"></script>
 </body>
 
 </html>
